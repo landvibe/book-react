@@ -1,0 +1,12 @@
+{
+  "presets": ["@babel/preset-react"],
+  "plugins": [
+    "@babel/plugin-transform-template-literals",
+    "@babel/plugin-transform-arrow-functions"
+  ],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  }
+}
