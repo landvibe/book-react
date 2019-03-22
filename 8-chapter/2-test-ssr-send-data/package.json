@@ -1,0 +1,31 @@
+{
+  "name": "2-test-ssr-send-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-server": "babel src --out-dir dist-server --config-file ./.babelrc.server.js",
+    "build": "npm run build-server && webpack",
+    "start": "node dist-server/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "express": "^4.16.4",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "styled-components": "^4.1.3",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
