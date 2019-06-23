@@ -1,7 +1,11 @@
 # 오탈자 및 개선사항
 ## 1장
 
-#### 위치: p41, 코드 1-41
+### 위치: p24
+
+내용: `__tset__`를 `__tests__`로 변경
+
+### 위치: p41, 코드 1-41
 
 내용: styled-components 버전이 올라가면서 책에서 사용한 `extend` 함수가 `styled` 함수로 변경됐습니다.
 
@@ -19,9 +23,29 @@ const BoxBig = styled(BoxCommon)`
 `;
 ```
 
+## 2장
+
+### 위치: p65, 코드 2-39
+
+내용: 마지막 콘솔 로그의 결과는 0이 아니라 21입니다.
+
+### 위치: p67, 코드 2-45
+
+내용: 소괄호의 위치 변경
+
+Before
+```js
+({ foo: obj.prop, bar: arr[0] }) = {foo:123, bar:true};
+```
+
+After
+```js
+({ foo: obj.prop, bar: arr[0] } = {foo:123, bar:true});
+```
+
 ## 4장
 
-#### 위치: p212, 코드 4-55
+### 위치: p212, 코드 4-55
 
 내용: output1, output2, output3 오른쪽에서 호출되는 함수는 sort가 아니라 sort2 입니다.
 
