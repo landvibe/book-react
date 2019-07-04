@@ -67,3 +67,21 @@ output1 === output2; // true
 const inputArr2 = [/* */];
 const output3 = sort2(inputArr2);
 ```
+
+## 6장
+
+### 위치: p291, 코드 6-58
+
+내용: getAgeLimit, getShowLimit 함수 export 하기
+
+Before
+```js
+const getAgeLimit = state => state.friend.ageLimit;
+const getShowLimit = state => state.friend.showLimit;
+```
+
+After
+```js
+export const getAgeLimit = state => state.friend.ageLimit;
+export const getShowLimit = state => state.friend.showLimit;
+```
