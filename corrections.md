@@ -1,6 +1,21 @@
 # 오탈자 및 개선사항
 ## 1장
 
+### 위치: p5, 코드 1-1
+
+내용: 불필요한 슬래시(/) 제거
+
+Before
+```js
+<script src="react.development.js"/></script>
+```
+
+After
+```js
+<script src="react.development.js"></script>
+```
+
+
 ### 위치: p24
 
 내용: `__tset__`를 `__tests__`로 변경
