@@ -100,3 +100,35 @@ After
 export const getAgeLimit = state => state.friend.ageLimit;
 export const getShowLimit = state => state.friend.showLimit;
 ```
+
+## 9장
+
+### 위치: p468, 코드 9-64
+
+내용: typescript가 더 똑똑해져서(버전이 올라가서) swapProperty 함수에서 타입 에러가 발생합니다. 세 번째 매개변수의 타입도 제네릭을 이용해야 타입 에러가 발생하지 않습니다.
+
+Before
+```js
+function swapProperty<T extends Person>(
+  p1: T,
+  p2: T,
+  name: keyof Person,
+): void {
+  const temp = p1[name];
+  p1[name] = p2[name];
+  p2[name] = temp;
+}
+```
+
+After
+```js
+function swapProperty<T extends Person, K extends keyof Person>(
+  p1: T,
+  p2: T,
+  prop: K,
+): void {
+  const temp = p1[prop];
+  p1[prop] = p2[prop];
+  p2[prop] = temp;
+}
+```
