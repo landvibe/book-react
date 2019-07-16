@@ -58,6 +58,16 @@ After
 ({ foo: obj.prop, bar: arr[0] } = {foo:123, bar:true});
 ```
 
+## 3장
+
+### 위치: p109, 코드 3-4
+
+내용: `this.color`가 아니라 `this.state.color` 입니다.
+
+### 위치: p118, 코드 3-20
+
+내용: `elements.type`이 아니라 `element.type` 입니다.
+
 ## 4장
 
 ### 위치: p212, 코드 4-55
