@@ -119,6 +119,22 @@ export const getAgeLimit = state => state.friend.ageLimit;
 export const getShowLimit = state => state.friend.showLimit;
 ```
 
+## 7장
+
+### 위치: p351, 코드 7-65
+
+내용: clean-webpack-plugin major 버전이 올라가면서 내보내는 방식이 변경됐습니다.
+
+Before
+```js
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+```
+
+After
+```js
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+```
+
 ## 9장
 
 ### 위치: p468, 코드 9-64
