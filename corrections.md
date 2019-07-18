@@ -38,6 +38,14 @@ const BoxBig = styled(BoxCommon)`
 `;
 ```
 
+### 위치: p45, 코드 1-44
+
+내용: `onChangPage`를 `onChangePage`로 변경 (코드 동작에는 영향 없음)
+
+### 위치: p48, 코드 1-47
+
+내용: `bludRoom`을 `bludRoom`로 변경 (코드 동작에는 영향 없음)
+
 ## 2장
 
 ### 위치: p65, 코드 2-39
