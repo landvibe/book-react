@@ -76,6 +76,34 @@ After
 
 내용: `elements.type`이 아니라 `element.type` 입니다.
 
+### 위치: p133, 코드 3-38
+
+내용: 속성값은 value가 아니라 price 입니다.
+
+Before
+```js
+return <PriceInput key={product.id} value={product.price} />;
+```
+
+After
+```js
+return <PriceInput key={product.id} price={product.price} />;
+```
+
+### 위치: p134, 코드 3-39
+
+내용: 속성값은 value가 아니라 price 입니다.
+
+Before
+```js
+return <PriceInput onChange={this.onChangePrice} value={currentPrice} />;
+```
+
+After
+```js
+return <PriceInput onChange={this.onChangePrice} price={currentPrice} />;
+```
+
 ## 4장
 
 ### 위치: p212, 코드 4-55
