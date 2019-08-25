@@ -44,7 +44,7 @@ const BoxBig = styled(BoxCommon)`
 
 ### 위치: p48, 코드 1-47
 
-내용: `bludRoom`을 `bludRoom`로 변경 (코드 동작에는 영향 없음)
+내용: `bludRoom`을 `blueRoom`으로 변경 (코드 동작에는 영향 없음)
 
 ## 2장
 
