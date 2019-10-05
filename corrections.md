@@ -152,9 +152,13 @@ export const getShowLimit = state => state.friend.showLimit;
 내용: 글상자의 내용이 문맥상 어울리지 않는다. 삭제하자.
 
 `값에 의한 호출과 참조에 의한 호출`과는 무관하게 아래와 같이 작성한 코드는 잘 동작한다.
+
 `state[name] = state[name].filter(item => item.id !== action.item.id);`
+
 그리고 글상자의 내용처럼 아래처럼 작성한 코드는 잘못된 코드다.
+
 `state = state.filter(item => item.id !== action.item.id);`
+
 하지만 문맥상 어울리지 않는 내용이므로 해당 글상자는 다음 쇄에 삭제하는 게 좋겠다.
 
 ## 7장
