@@ -72,6 +72,10 @@ After
 
 내용: `this.color`가 아니라 `this.state.color` 입니다.
 
+### 위치: p111, 코드 3-7
+
+내용: 2번 코드에서 `props.title`이 아니라 `this.props.title` 입니다.
+
 ### 위치: p118, 코드 3-20
 
 내용: `elements.type`이 아니라 `element.type` 입니다.
