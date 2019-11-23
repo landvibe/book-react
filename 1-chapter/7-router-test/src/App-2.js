@@ -6,21 +6,21 @@ class App extends Component {
   };
   componentDidMount() {
     window.onpopstate = event => {
-      this.onChangPage(event.state);
+      this.onChangePage(event.state);
     };
   }
-  onChangPage = pageName => {
+  onChangePage = pageName => {
     this.setState({ pageName });
   };
   onClick1 = () => {
     const pageName = 'page1';
     window.history.pushState(pageName, '', '/page1');
-    this.onChangPage(pageName);
+    this.onChangePage(pageName);
   };
   onClick2 = () => {
     const pageName = 'page2';
     window.history.pushState(pageName, '', '/page2');
-    this.onChangPage(pageName);
+    this.onChangePage(pageName);
   };
   render() {
     const { pageName } = this.state;
