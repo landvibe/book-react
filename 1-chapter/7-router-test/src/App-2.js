@@ -1,39 +1,31 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
-class App extends Component {
-  state = {
-    pageName: '',
-  };
-  componentDidMount() {
+export default function App() {
+  const [pageName, setPageName] = useState('');
+  useEffect(() => {
     window.onpopstate = event => {
-      this.onChangePage(event.state);
+      setPageName(event.state);
     };
-  }
-  onChangePage = pageName => {
-    this.setState({ pageName });
-  };
-  onClick1 = () => {
+  }, []);
+  function onClick1() {
     const pageName = 'page1';
     window.history.pushState(pageName, '', '/page1');
-    this.onChangePage(pageName);
-  };
-  onClick2 = () => {
+    setPageName(pageName);
+  }
+  function onClick2() {
     const pageName = 'page2';
     window.history.pushState(pageName, '', '/page2');
-    this.onChangePage(pageName);
-  };
-  render() {
-    const { pageName } = this.state;
-    return (
-      <div>
-        <button onClick={this.onClick1}>page1</button>
-        <button onClick={this.onClick2}>page2</button>
-        {!pageName && <Home />}
-        {pageName === 'page1' && <Page1 />}
-        {pageName === 'page2' && <Page2 />}
-      </div>
-    );
+    setPageName(pageName);
   }
+  return (
+    <div>
+      <button onClick={onClick1}>page1</button>
+      <button onClick={onClick2}>page2</button>
+      {!pageName && <Home />}
+      {pageName === 'page1' && <Page1 />}
+      {pageName === 'page2' && <Page2 />}
+    </div>
+  );
 }
 
 function Home() {
@@ -45,5 +37,3 @@ function Page1() {
 function Page2() {
   return <h2>여기는 Page2입니다.</h2>;
 }
-
-export default App;
