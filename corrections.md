@@ -181,6 +181,16 @@ After
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 ```
 
+## 8장
+
+### 위치: p376, 코드 8-4 그리고 p389, 코드 8-20
+
+내용: clean-webpack-plugin 버전이 올라가면서 여러 개의 웹팩 설정을 실행할 때 새로 생성되는 파일까지 삭제하는 문제가 있습니다.
+
+따라서 clean-webpack-plugin과 관련된 코드를 삭제해주세요.
+
+clean-webpack-plugin을 사용하지 않아도 책의 내용을 이해하는데 전혀 문제가 되지 않습니다.
+
 ## 9장
 
 ### 위치: p468, 코드 9-64
