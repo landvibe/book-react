@@ -1,51 +1,24 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { getNextFriend } from '../../common/mockData';
 import * as actions from '../state';
 import FriendList from '../component/FriendList';
-import { connect } from 'react-redux';
-import {
-  makeGetFriendsWithAgeLimit,
-  getFriendsWithAgeLimit,
-} from '../state/selector';
+import { useSelector, useDispatch } from 'react-redux';
+import { makeGetFriendsWithAgeLimit } from '../state/selector';
 
-class FriendMain extends React.Component {
-  onAdd = () => {
+export default function FriendMain({ ageLimit }) {
+  const getFriendsWithAgeLimit = useMemo(makeGetFriendsWithAgeLimit, []);
+  const friendsWithAgeLimit = useSelector(state =>
+    getFriendsWithAgeLimit(state, ageLimit),
+  );
+  const dispatch = useDispatch();
+  function onAdd() {
     const friend = getNextFriend();
-    this.props.addFriend(friend);
-  };
-  render() {
-    const { friendsWithAgeLimit } = this.props;
-    return (
-      <div>
-        <button onClick={this.onAdd}>친구 추가</button>
-        <FriendList friends={friendsWithAgeLimit} />
-      </div>
-    );
+    dispatch(actions.addFriend(friend));
   }
+  return (
+    <div>
+      <button onClick={onAdd}>친구 추가</button>
+      <FriendList friends={friendsWithAgeLimit} />
+    </div>
+  );
 }
-
-// 리팩터링 후
-const makeMapStateToProps = () => {
-  const getFriendsWithAgeLimit = makeGetFriendsWithAgeLimit();
-  const mapStateToProps = (state, props) => {
-    return {
-      friendsWithAgeLimit: getFriendsWithAgeLimit(state, props),
-    };
-  };
-  return mapStateToProps;
-};
-export default connect(
-  makeMapStateToProps,
-  actions,
-)(FriendMain);
-
-// 리팩터링 전
-// const mapStateToProps = (state, props) => {
-//   return {
-//     friendsWithAgeLimit: getFriendsWithAgeLimit(state, props),
-//   };
-// };
-// export default connect(
-//   mapStateToProps,
-//   actions,
-// )(FriendMain);

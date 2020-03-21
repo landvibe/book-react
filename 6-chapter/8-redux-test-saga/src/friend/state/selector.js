@@ -1,11 +1,10 @@
 import { createSelector } from 'reselect';
 
 const getFriends = state => state.friend.friends;
-const getAgeLimit = (state, props) => props.ageLimit;
+const getAgeLimit = (_, ageLimit) => ageLimit;
 
 export const makeGetFriendsWithAgeLimit = () => {
-  return createSelector(
-    [getFriends, getAgeLimit],
-    (friends, ageLimit) => friends.filter(friend => friend.age <= ageLimit),
+  return createSelector([getFriends, getAgeLimit], (friends, ageLimit) =>
+    friends.filter(friend => friend.age <= ageLimit),
   );
 };
