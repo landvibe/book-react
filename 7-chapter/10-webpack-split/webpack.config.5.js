@@ -1,5 +1,5 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -10,6 +10,6 @@ module.exports = {
     chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: [new CleanWebpackPlugin(['dist'])],
+  plugins: [new CleanWebpackPlugin()],
   mode: 'production',
 };
