@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Icon from '../static/icon.png';
 import { add } from '../src/util';
 
-function Page1() {
+export default function Page1() {
   return (
     <div>
       <p>{`10 + 20 = ${add(10, 20)}`}</p>
@@ -23,5 +23,3 @@ function Page1() {
     </div>
   );
 }
-
-export default Page1;

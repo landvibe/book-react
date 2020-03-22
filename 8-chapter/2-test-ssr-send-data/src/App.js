@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './Home';
 import About from './About';
 import styled from 'styled-components';
@@ -8,36 +8,30 @@ const Container = styled.div`
   border: 1px solid blue;
 `;
 
-class App extends React.Component {
-  state = {
-    page: this.props.page,
-  };
-  componentDidMount() {
+export default function App({ page }) {
+  const [currentPage, setCurrentPage] = useState(page);
+  function onChangePage(e) {
+    const newPage = e.target.dataset.page;
+    window.history.pushState(newPage, '', `/${newPage}`);
+    setCurrentPage(newPage);
+  }
+  useEffect(() => {
     window.onpopstate = event => {
-      this.setState({ page: event.state });
+      setCurrentPage(event.state);
     };
-  }
-  onChangePage = e => {
-    const page = e.target.dataset.page;
-    window.history.pushState(page, '', `/${page}`);
-    this.setState({ page });
-  };
-  render() {
-    const { page } = this.state;
-    const PageComponent = page === 'home' ? Home : About;
-    return (
-      <Container>
-        <div className="container">
-          <button data-page="home" onClick={this.onChangePage}>
-            Home
-          </button>
-          <button data-page="about" onClick={this.onChangePage}>
-            About
-          </button>
-          <PageComponent />
-        </div>
-      </Container>
-    );
-  }
+  }, []);
+  const PageComponent = currentPage === 'home' ? Home : About;
+  return (
+    <Container>
+      <div className="container">
+        <button data-page="home" onClick={onChangePage}>
+          Home
+        </button>
+        <button data-page="about" onClick={onChangePage}>
+          About
+        </button>
+        <PageComponent />
+      </div>
+    </Container>
+  );
 }
-export default App;

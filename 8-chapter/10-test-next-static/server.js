@@ -52,7 +52,7 @@ server.listen(3000, err => {
 // if (!dev) {
 //   for (const info of prerenderList) {
 //     const { name, path } = info;
-//     const html = fs.readFileSync(`./out/${name}/index.html`, 'utf8');
+//     const html = fs.readFileSync(`./out/${name}.html`, 'utf8');
 //     prerenderCache[path] = html;
 //   }
 // }

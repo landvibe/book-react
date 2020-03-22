@@ -62,10 +62,7 @@ app.get('*', (req, res) => {
     const renderStream = sheet.interleaveWithNodeStream(
       renderToNodeStream(reactElement),
     );
-    renderStream.pipe(
-      res,
-      { end: false },
-    );
+    renderStream.pipe(res, { end: false });
     renderStream.on('end', () => {
       res.end(postfix);
     });

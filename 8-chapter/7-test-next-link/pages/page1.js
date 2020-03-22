@@ -5,7 +5,7 @@ import Link from 'next/link';
 function Page1() {
   return (
     <div>
-      <Link href="/page2" passHref>
+      <Link href="/page2">
         <a>page2로 이동</a>
       </Link>
       <p>this is home page</p>
