@@ -38,15 +38,13 @@ class App extends React.Component {
     const PageComponent = page === 'home' ? Home : About;
     return (
       <Container>
-        <div className="container">
-          <button data-page="home" onClick={this.onChangePage}>
-            Home
-          </button>
-          <button data-page="about" onClick={this.onChangePage}>
-            About
-          </button>
-          <PageComponent username={username} />
-        </div>
+        <button data-page="home" onClick={this.onChangePage}>
+          Home
+        </button>
+        <button data-page="about" onClick={this.onChangePage}>
+          About
+        </button>
+        <PageComponent username={username} />
         <img src={Icon} />
       </Container>
     );

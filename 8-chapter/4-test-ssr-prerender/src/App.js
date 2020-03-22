@@ -36,15 +36,13 @@ export default function App({ page }) {
   const PageComponent = currentPage === 'home' ? Home : About;
   return (
     <Container>
-      <div className="container">
-        <button data-page="home" onClick={onChangePage}>
-          Home
-        </button>
-        <button data-page="about" onClick={onChangePage}>
-          About
-        </button>
-        <PageComponent username={username} />
-      </div>
+      <button data-page="home" onClick={onChangePage}>
+        Home
+      </button>
+      <button data-page="about" onClick={onChangePage}>
+        About
+      </button>
+      <PageComponent username={username} />
       <img src={Icon} />
     </Container>
   );
