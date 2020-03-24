@@ -197,6 +197,8 @@ clean-webpack-plugin을 사용하지 않아도 책의 내용을 이해하는데 
 
 내용: typescript가 더 똑똑해져서(버전이 올라가서) swapProperty 함수에서 타입 에러가 발생합니다. 세 번째 매개변수의 타입도 제네릭을 이용해야 타입 에러가 발생하지 않습니다.
 
+참고 링크: https://github.com/microsoft/TypeScript/pull/30769
+
 Before
 ```js
 function swapProperty<T extends Person>(
