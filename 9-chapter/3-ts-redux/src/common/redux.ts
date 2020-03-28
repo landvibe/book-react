@@ -1,4 +1,4 @@
-import produce from 'immer';
+import produce, { Draft } from 'immer';
 
 interface TypedAction<T extends string> {
   type: T;
@@ -17,15 +17,14 @@ export function createAction(type, payload?) {
   return payload !== undefined ? { type, payload } : { type };
 }
 
-export function createReducer<S, A extends TypedAction<string>>(
+export function createReducer<S, T extends string, A extends TypedAction<T>>(
   initialState: S,
   handlerMap: {
-    [key in A['type']]: (state: S, action: Extract<A, TypedAction<key>>) => void
+    [key in T]: (state: Draft<S>, action: Extract<A, TypedAction<key>>) => void;
   },
 ) {
-  return function(state: S = initialState, action: A) {
+  return function(state: S = initialState, action: Extract<A, TypedAction<T>>) {
     return produce(state, draft => {
-      // @ts-ignore
       const handler = handlerMap[action.type];
       if (handler) {
         handler(draft, action);

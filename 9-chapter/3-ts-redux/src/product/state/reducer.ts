@@ -14,7 +14,7 @@ const INITIAL_STATE = {
 };
 
 type Action = ReturnType<typeof actions[keyof typeof actions]>;
-export default createReducer<StateProduct, Action>(INITIAL_STATE, {
+export default createReducer<StateProduct, ActionType, Action>(INITIAL_STATE, {
   [ActionType.SetName]: (state, action) => (state.name = action.payload.name),
   [ActionType.SetPrice]: (state, action) =>
     (state.price = action.payload.price),

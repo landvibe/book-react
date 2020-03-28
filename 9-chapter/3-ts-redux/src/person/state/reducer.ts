@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 };
 
 type Action = ReturnType<typeof actions[keyof typeof actions]>;
-export default createReducer<StatePerson, Action>(INITIAL_STATE, {
+export default createReducer<StatePerson, ActionType, Action>(INITIAL_STATE, {
   [ActionType.SetName]: (state, action) => (state.name = action.payload.name),
   [ActionType.SetAge]: (state, action) => (state.age = action.payload.age),
 });
