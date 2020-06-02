@@ -108,6 +108,14 @@ After
 return <PriceInput onChange={this.onChangePrice} price={currentPrice} />;
 ```
 
+### 위치: p143
+
+내용: 오해의 소지가 커서 문장을 수정.
+
+Before: componentDidUpdate 메서드가 첫 렌더링 `후`에 호출되지 않는다는 이유로 코드가 복잡해진다.
+
+After: componentDidUpdate 메서드가 첫 렌더링 `직후`에 호출되지 않는다는 이유로 코드가 복잡해진다.
+
 ## 4장
 
 ### 위치: p212, 코드 4-55
