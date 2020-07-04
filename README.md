@@ -1,6 +1,6 @@
 # [실전 리액트 프로그래밍] 실습 코드입니다
 
-[실전 리액트 프로그래밍](https://book.naver.com/bookdb/book_detail.nhn?bid=15008532)에 나오는 실습 코드입니다.
+[실전 리액트 프로그래밍](https://book.naver.com/bookdb/book_detail.nhn?bid=16391022)에 나오는 실습 코드입니다.
 
 실습으로 진행되는 코드만 제공합니다.
 
