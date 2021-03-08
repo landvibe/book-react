@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 function getConfig(isServer) {
   return {
@@ -49,12 +50,8 @@ function getConfig(isServer) {
       ],
     },
     plugins: isServer
-      ? []
-      : [
-          new HtmlWebpackPlugin({
-            template: './template/index.html',
-          }),
-        ],
+      ? [new CleanWebpackPlugin()]
+      : [new HtmlWebpackPlugin({ template: "./template/index.html" })],
     mode: 'production',
   };
 }
